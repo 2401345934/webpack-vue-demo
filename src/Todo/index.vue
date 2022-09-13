@@ -1,8 +1,10 @@
 <template>
-  <Todo></Todo>
+  <div>{{msg}}</div>
 </template>
-<script  setup >
-  import Todo from "./Todo/index.vue"
+<script setup >
+ import {ref } from "vue"
+ const msg  = ref("msg111")
+
 
 </script>
 
