@@ -1,7 +1,7 @@
 <template>
   <Todo></Todo>
 </template>
-<script  setup >
+<script  setup lang="ts" >
   import Todo from "./Todo/index.vue"
 
 </script>

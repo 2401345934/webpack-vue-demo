@@ -26,6 +26,7 @@
     "baseUrl": ".",
     // 指定具体要解析使用的类型
     "types": [
+      "node",
       "webpack-env"
     ],
     // 路径解析(类似于webpack alias)
@@ -46,13 +47,15 @@
     ]
   },
   "include": [
-    "src/*.ts",
-    "src/*.vue",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
+    "./src/*.ts",
+    "./src/*.vue",
+    "./src/Todo/index.vue",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "src/main.js"
   ],
   "exclude": [
     "node_modules"

@@ -3,7 +3,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'main.js'),
+  entry: path.join(__dirname, 'src', 'main.ts'),
   // development
   mode: "development",
   devServer: {
@@ -14,7 +14,14 @@ module.exports = {
     rules: [
       { test: /\.pug$/, use: ["pug-plain-loader"] },
       { test: /\.vue$/, use: ["vue-loader"] },
-      { test: /\.ts$/, use: ["ts-loader"] },
+      {
+        test:/\.tsx?$/,
+        loader:"ts-loader",
+        options: {
+            configFile: path.resolve(process.cwd(), 'tsconfig.json'),
+            appendTsSuffixTo: [/\.vue$/]
+         },
+     },
       {
         test: /\.less$/,
         use: ["style-loader", "css-loader", "less-loader"],
