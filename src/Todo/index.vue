@@ -1,18 +1,17 @@
 <template>
-  <div>{{msg}}</div>
+  <Title />
+  <Input />
 </template>
 <script setup lang="ts" >
- import {ref } from "vue"
- const msg  = ref("msg111")
+  import { reactive } from 'vue';
+  import Title from "./components/Title/index.vue"
+  import Input from "./components/Input/index.vue"
+  const state : {list:any[]} = reactive({
+    list:[]
+  })
 
-
+  console.log(state.list)
 </script>
 
 <style lang="less">
-body {
-  h3 {
-  margin: 110px ;
-  color: #42b983;
-}
-}
 </style>
