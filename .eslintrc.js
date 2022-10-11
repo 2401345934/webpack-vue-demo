@@ -4,6 +4,10 @@ module.exports = {
     es2021: true,
     node: true
   },
+  globals: {
+    defineEmits: 'readonly',
+    defineProps: 'readonly'
+  },
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-essential',
@@ -18,6 +22,10 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    '@typescript-eslint/no-var-requires': 0
+    '@typescript-eslint/no-var-requires': 0,
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    //在rules中添加自定义规则
+    'vue/multi-word-component-names': 'off'
   }
 }
