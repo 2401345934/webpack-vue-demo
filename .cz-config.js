@@ -16,6 +16,7 @@ module.exports = {
     { name: 'router' },
     { name: 'pages' },
     { name: 'components' },
+    { name: 'package' },
     { name: 'hook' }
   ],
   // it needs to match the value for field type. Eg.: 'fix'

@@ -15,7 +15,7 @@
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "eslint --ext .jsx ./src --fix",
     "lint:style": "stylelint src/**/*.{scss,wxss} --fix",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0",
     "prepare": "husky install"
   },
   "config": {
