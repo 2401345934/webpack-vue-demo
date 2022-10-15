@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
 import App from './index.vue'
-const vue = createApp(App)
-vue.mount('#app')
+import 'ant-design-vue/dist/antd.variable.min.css'
+
+const app = createApp(App)
+
+app.mount('#app')

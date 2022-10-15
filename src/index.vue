@@ -2,7 +2,7 @@
   <Todo></Todo>
 </template>
 <script setup lang="ts">
-import Todo from './Todo/index.vue'
+import Todo from './pages/Todo/index.vue'
 </script>
 
 <style lang="less">
