@@ -3,6 +3,7 @@
 - ♻️ 重构(typescript): 修改 cz ([72d214e](https://github.com/2401345934/webpack-vue-demo/commit/72d214e))
 - ✨ 新增(hook): 新增 hooks 文件分类 ([a8d9f03](https://github.com/2401345934/webpack-vue-demo/commit/a8d9f03))
 - ✨ 新增(package): 修改 package ([4ed097f](https://github.com/2401345934/webpack-vue-demo/commit/4ed097f))
+- ✨ 新增(package): test changelog ([c4996bc](https://github.com/2401345934/webpack-vue-demo/commit/c4996bc))
 - ✨ 新增(pages): todolist ([f117398](https://github.com/2401345934/webpack-vue-demo/commit/f117398))
 - ✨ 新增(webpack): 增加自动解析 webpack ([07f4ba6](https://github.com/2401345934/webpack-vue-demo/commit/07f4ba6))
 - 初始化环境 ([f5d5e39](https://github.com/2401345934/webpack-vue-demo/commit/f5d5e39))
