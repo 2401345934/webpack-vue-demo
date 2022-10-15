@@ -1,8 +1,8 @@
 <template>
-  <Todo></Todo>
+    <router-view></router-view>
 </template>
 <script setup lang="ts">
-import Todo from './pages/Todo/index.vue'
+import { RouterView } from "vue-router"
 </script>
 
 <style lang="less">

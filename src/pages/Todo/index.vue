@@ -20,7 +20,6 @@ const state: { list: any[] } = reactive({
 })
 
 const addList = (item: any) => {
-  console.log(item, '123')
   state.list.unshift(item)
 }
 </script>
