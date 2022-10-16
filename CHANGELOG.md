@@ -8,6 +8,7 @@
 - ✨ 新增(pages): todolist ([f117398](https://github.com/2401345934/webpack-vue-demo/commit/f117398))
 - ✨ 新增(request): ([2eeb970](https://github.com/2401345934/webpack-vue-demo/commit/2eeb970))
 - ✨ 新增(request): axios 封装 ([170d403](https://github.com/2401345934/webpack-vue-demo/commit/170d403))
+- ✨ 新增(router): 改用 history 路由 并修改 webpack 配置 ([0551a6b](https://github.com/2401345934/webpack-vue-demo/commit/0551a6b))
 - ✨ 新增(router): 引入 vue-router ([c3ec5b6](https://github.com/2401345934/webpack-vue-demo/commit/c3ec5b6))
 - ✨ 新增(webpack): 增加自动解析 webpack ([07f4ba6](https://github.com/2401345934/webpack-vue-demo/commit/07f4ba6))
 - 初始化环境 ([f5d5e39](https://github.com/2401345934/webpack-vue-demo/commit/f5d5e39))
