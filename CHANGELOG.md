@@ -6,6 +6,7 @@
 - ✨ 新增(package): test change log ([0d5ae0d](https://github.com/2401345934/webpack-vue-demo/commit/0d5ae0d))
 - ✨ 新增(package): test changelog ([c4996bc](https://github.com/2401345934/webpack-vue-demo/commit/c4996bc))
 - ✨ 新增(pages): todolist ([f117398](https://github.com/2401345934/webpack-vue-demo/commit/f117398))
+- ✨ 新增(request): ([2eeb970](https://github.com/2401345934/webpack-vue-demo/commit/2eeb970))
 - ✨ 新增(request): axios 封装 ([170d403](https://github.com/2401345934/webpack-vue-demo/commit/170d403))
 - ✨ 新增(router): 引入 vue-router ([c3ec5b6](https://github.com/2401345934/webpack-vue-demo/commit/c3ec5b6))
 - ✨ 新增(webpack): 增加自动解析 webpack ([07f4ba6](https://github.com/2401345934/webpack-vue-demo/commit/07f4ba6))

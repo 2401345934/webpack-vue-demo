@@ -21,9 +21,13 @@ const alias = {
 
 const config = {
   entry: path.join(__dirname, 'src', 'main.ts'),
+  output: {
+    publicPath: '/'
+  },
   devServer: {
     hot: true,
-    open: true
+    open: true,
+    historyApiFallback: true // 解决 路由跳转之后刷新浏览器按钮报404的情况
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
