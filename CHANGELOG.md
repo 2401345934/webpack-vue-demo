@@ -1,4 +1,4 @@
-## 1.0.0 (2022-10-15)
+## 1.0.0 (2022-10-16)
 
 - ♻️ 重构(typescript): 修改 cz ([72d214e](https://github.com/2401345934/webpack-vue-demo/commit/72d214e))
 - ✨ 新增(hook): 新增 hooks 文件分类 ([a8d9f03](https://github.com/2401345934/webpack-vue-demo/commit/a8d9f03))
@@ -6,6 +6,7 @@
 - ✨ 新增(package): test change log ([0d5ae0d](https://github.com/2401345934/webpack-vue-demo/commit/0d5ae0d))
 - ✨ 新增(package): test changelog ([c4996bc](https://github.com/2401345934/webpack-vue-demo/commit/c4996bc))
 - ✨ 新增(pages): todolist ([f117398](https://github.com/2401345934/webpack-vue-demo/commit/f117398))
+- ✨ 新增(router): 引入 vue-router ([c3ec5b6](https://github.com/2401345934/webpack-vue-demo/commit/c3ec5b6))
 - ✨ 新增(webpack): 增加自动解析 webpack ([07f4ba6](https://github.com/2401345934/webpack-vue-demo/commit/07f4ba6))
 - 初始化环境 ([f5d5e39](https://github.com/2401345934/webpack-vue-demo/commit/f5d5e39))
 - 推送 ([ee2f81e](https://github.com/2401345934/webpack-vue-demo/commit/ee2f81e))
