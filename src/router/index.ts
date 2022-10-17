@@ -21,4 +21,6 @@ const router = createRouter({
   routes
 })
 
-export default router
+const routerList = routes[0].children
+
+export { router, routerList }
