@@ -1,6 +1,7 @@
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 // 并行压缩
 const TerserPlugin = require('terser-webpack-plugin')
 // fork 线程 check ts type
@@ -14,6 +15,12 @@ const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
 const { AntDesignVueResolver } = require('unplugin-vue-components/resolvers')
 const ComponentsPlugin = require('unplugin-vue-components/webpack')
+// 压缩
+const CompressionPlugin = require('compression-webpack-plugin')
+// build 前 清理 dist
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+// 合并配置
+const { merge } = require('webpack-merge')
 
 const alias = {
   '@': path.resolve(__dirname, 'src')
@@ -22,12 +29,8 @@ const alias = {
 const config = {
   entry: path.join(__dirname, 'src', 'main.ts'),
   output: {
-    publicPath: '/'
-  },
-  devServer: {
-    hot: true,
-    open: true,
-    historyApiFallback: true // 解决 路由跳转之后刷新浏览器按钮报404的情况
+    filename: '[name]-[contenthash].js',
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -136,6 +139,8 @@ const config = {
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     // eslint plugin
     new ESLintPlugin(),
@@ -158,7 +163,8 @@ const config = {
   </body>
 </html>
     `
-    })
+    }),
+    new CompressionPlugin()
   ]
 }
 
@@ -169,6 +175,11 @@ const envConfig = {
     // 最小化监听
     watchOptions: {
       ignored: /node_modules/
+    },
+    devServer: {
+      hot: true,
+      open: true,
+      historyApiFallback: true // 解决BrowserRouter路由跳转之后刷新浏览器按钮报404的情况
     },
     // // 按需编译
     // experiments: {
@@ -191,13 +202,34 @@ const envConfig = {
   },
   production: {
     devtool: 'eval',
-    cache: {
-      type: 'filesystem'
+    // cache: {
+    //   type: 'filesystem'
+    // },
+    externals: {
+      lodash: '_',
+      dayjs: 'dayjs'
     },
     optimization: {
       splitChunks: {
-        // 设定引用次数超过 2 的模块才进行分包
-        minChunks: 2
+        chunks: 'async',
+        minSize: 20000,
+        minRemainingSize: 0,
+        minChunks: 1,
+        maxAsyncRequests: 30,
+        maxInitialRequests: 30,
+        enforceSizeThreshold: 50000,
+        cacheGroups: {
+          defaultVendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            reuseExistingChunk: true
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        }
       },
       minimize: true,
       minimizer: [
@@ -212,7 +244,8 @@ const envConfig = {
           }
         }),
         new TerserPlugin({
-          parallel: 5 // number | boolean
+          parallel: 5, // number | boolean
+          exclude: ['node_modules']
         })
       ]
     }
@@ -220,8 +253,5 @@ const envConfig = {
 }
 
 module.exports = function (e, v) {
-  return {
-    ...config,
-    ...envConfig[v.mode]
-  }
+  return merge(config, envConfig[v.mode])
 }
