@@ -1,4 +1,4 @@
-## 1.0.0 (2022-10-17)
+## 1.0.0 (2022-10-18)
 
 - ♻️ 重构(typescript): 修改 cz ([72d214e](https://github.com/2401345934/webpack-vue-demo/commit/72d214e))
 - ✨ 新增(hook): 新增 hooks 文件分类 ([a8d9f03](https://github.com/2401345934/webpack-vue-demo/commit/a8d9f03))
@@ -6,6 +6,7 @@
 - ✨ 新增(package): 修改 build 命令 ([a2c6669](https://github.com/2401345934/webpack-vue-demo/commit/a2c6669))
 - ✨ 新增(package): test change log ([0d5ae0d](https://github.com/2401345934/webpack-vue-demo/commit/0d5ae0d))
 - ✨ 新增(package): test changelog ([c4996bc](https://github.com/2401345934/webpack-vue-demo/commit/c4996bc))
+- ✨ 新增(pages): 增加 layout 布局 ([9b54e29](https://github.com/2401345934/webpack-vue-demo/commit/9b54e29))
 - ✨ 新增(pages): todolist ([f117398](https://github.com/2401345934/webpack-vue-demo/commit/f117398))
 - ✨ 新增(request): ([2eeb970](https://github.com/2401345934/webpack-vue-demo/commit/2eeb970))
 - ✨ 新增(request): axios 封装 ([170d403](https://github.com/2401345934/webpack-vue-demo/commit/170d403))

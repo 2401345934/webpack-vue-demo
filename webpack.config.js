@@ -16,7 +16,7 @@ const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
 const { AntDesignVueResolver } = require('unplugin-vue-components/resolvers')
 const ComponentsPlugin = require('unplugin-vue-components/webpack')
 // 压缩
-const CompressionPlugin = require('compression-webpack-plugin')
+// const CompressionPlugin = require('compression-webpack-plugin')
 // build 前 清理 dist
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // 合并配置
@@ -34,6 +34,7 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    modules: [path.resolve(__dirname, 'node_modules')],
     alias
   },
   module: {
@@ -73,29 +74,38 @@ const config = {
         test: /\.svg$/i,
         use: ['raw-loader']
       },
-      { test: /\.pug$/, use: ['pug-plain-loader'] },
-      { test: /\.vue$/, use: ['vue-loader'] },
+
+      { test: /\.pug$/, use: ['thread-loader', 'pug-plain-loader'] },
+      { test: /\.vue$/, use: ['thread-loader', 'vue-loader'] },
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
-        options: {
-          configFile: path.resolve(process.cwd(), 'tsconfig.json'),
-          appendTsSuffixTo: [/\.vue$/]
-        }
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: path.resolve(process.cwd(), 'tsconfig.json'),
+              appendTsSuffixTo: [/\.vue$/]
+            }
+          }
+        ]
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
           }
-        }
+        ]
       },
       {
         test: /\.less$/,
         use: [
+          'thread-loader',
           'style-loader',
           {
             loader: 'css-loader',
@@ -118,6 +128,7 @@ const config = {
       {
         test: /\.css$/,
         use: [
+          'thread-loader',
           'style-loader',
           {
             loader: 'css-loader',
@@ -163,8 +174,8 @@ const config = {
   </body>
 </html>
     `
-    }),
-    new CompressionPlugin()
+    })
+    // new CompressionPlugin()
   ]
 }
 
