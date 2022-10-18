@@ -44,7 +44,7 @@
   </a-layout>
 </template>
 <script setup lang="ts">
-import { routerList } from '../../router/index'
+import { routerList } from '@/router/index'
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue'
 import { onBeforeMount, reactive } from 'vue'
 import { RouterView, useRouter } from 'vue-router'

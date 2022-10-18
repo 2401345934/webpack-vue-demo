@@ -19,6 +19,7 @@
 - ✨ 新增(webpack): 增加并行压缩 ([4e0d8cd](https://github.com/2401345934/webpack-vue-demo/commit/4e0d8cd))
 - ✨ 新增(webpack): 增加自动解析 webpack ([07f4ba6](https://github.com/2401345934/webpack-vue-demo/commit/07f4ba6))
 - ✨ 新增(webpack): webpack 修改配置优化打包速度 ([0ef33b1](https://github.com/2401345934/webpack-vue-demo/commit/0ef33b1))
+- 🐛 修复(webpack): 修复 webpack 打开 白屏 ([5c079df](https://github.com/2401345934/webpack-vue-demo/commit/5c079df))
 - 初始化环境 ([f5d5e39](https://github.com/2401345934/webpack-vue-demo/commit/f5d5e39))
 - 推送 ([ee2f81e](https://github.com/2401345934/webpack-vue-demo/commit/ee2f81e))
 - 引入 babel ([f3917aa](https://github.com/2401345934/webpack-vue-demo/commit/f3917aa))

@@ -14,6 +14,7 @@ module.exports = {
   scopes: [
     { name: 'webpack' },
     { name: 'router' },
+    { name: 'tsconfig' },
     { name: 'pages' },
     { name: 'components' },
     { name: 'package' },
