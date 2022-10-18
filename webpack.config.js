@@ -75,8 +75,8 @@ const config = {
         use: ['raw-loader']
       },
 
-      { test: /\.pug$/, use: ['thread-loader', 'pug-plain-loader'] },
-      { test: /\.vue$/, use: ['thread-loader', 'vue-loader'] },
+      { test: /\.pug$/, use: ['pug-plain-loader'] },
+      { test: /\.vue$/, use: ['vue-loader'] },
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
@@ -105,7 +105,6 @@ const config = {
       {
         test: /\.less$/,
         use: [
-          'thread-loader',
           'style-loader',
           {
             loader: 'css-loader',
@@ -128,7 +127,6 @@ const config = {
       {
         test: /\.css$/,
         use: [
-          'thread-loader',
           'style-loader',
           {
             loader: 'css-loader',
