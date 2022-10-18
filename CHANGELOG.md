@@ -15,6 +15,7 @@
 - ✨ 新增(utils): 新增 utils 工具 ([0f556b2](https://github.com/2401345934/webpack-vue-demo/commit/0f556b2))
 - ✨ 新增(utils): 新增 utils 工具 ([c936b8f](https://github.com/2401345934/webpack-vue-demo/commit/c936b8f))
 - ✨ 新增(webpack): 修改 webpack 配置 优化打包性能 ([be1cf08](https://github.com/2401345934/webpack-vue-demo/commit/be1cf08))
+- ✨ 新增(webpack): 优化 webpack ([6d62282](https://github.com/2401345934/webpack-vue-demo/commit/6d62282))
 - ✨ 新增(webpack): 增加并行压缩 ([4e0d8cd](https://github.com/2401345934/webpack-vue-demo/commit/4e0d8cd))
 - ✨ 新增(webpack): 增加自动解析 webpack ([07f4ba6](https://github.com/2401345934/webpack-vue-demo/commit/07f4ba6))
 - ✨ 新增(webpack): webpack 修改配置优化打包速度 ([0ef33b1](https://github.com/2401345934/webpack-vue-demo/commit/0ef33b1))

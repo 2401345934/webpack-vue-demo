@@ -34,7 +34,6 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    modules: [path.resolve(__dirname, 'node_modules')],
     alias
   },
   module: {
@@ -74,33 +73,25 @@ const config = {
         test: /\.svg$/i,
         use: ['raw-loader']
       },
-
       { test: /\.pug$/, use: ['pug-plain-loader'] },
       { test: /\.vue$/, use: ['vue-loader'] },
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              configFile: path.resolve(process.cwd(), 'tsconfig.json'),
-              appendTsSuffixTo: [/\.vue$/]
-            }
-          }
-        ]
+        loader: 'ts-loader',
+        options: {
+          configFile: path.resolve(process.cwd(), 'tsconfig.json'),
+          appendTsSuffixTo: [/\.vue$/]
+        }
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env']
-            }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
           }
-        ]
+        }
       },
       {
         test: /\.less$/,
