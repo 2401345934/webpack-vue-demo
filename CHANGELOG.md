@@ -12,6 +12,7 @@
 - ✨ 新增(request): axios 封装 ([170d403](https://github.com/2401345934/webpack-vue-demo/commit/170d403))
 - ✨ 新增(router): 改用 history 路由 并修改 webpack 配置 ([0551a6b](https://github.com/2401345934/webpack-vue-demo/commit/0551a6b))
 - ✨ 新增(router): 引入 vue-router ([c3ec5b6](https://github.com/2401345934/webpack-vue-demo/commit/c3ec5b6))
+- ✨ 新增(tsconfig): 增加 paths ([e719b94](https://github.com/2401345934/webpack-vue-demo/commit/e719b94))
 - ✨ 新增(utils): 新增 utils 工具 ([0f556b2](https://github.com/2401345934/webpack-vue-demo/commit/0f556b2))
 - ✨ 新增(utils): 新增 utils 工具 ([c936b8f](https://github.com/2401345934/webpack-vue-demo/commit/c936b8f))
 - ✨ 新增(webpack): 修改 webpack 配置 优化打包性能 ([be1cf08](https://github.com/2401345934/webpack-vue-demo/commit/be1cf08))
