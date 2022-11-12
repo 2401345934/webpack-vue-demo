@@ -1,12 +1,12 @@
 {
   "name": "webpack-vue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "version": "# 修改 version  \n zx bump.mjs",
     "commit": "npm run version && npm run changelog && git add . && git cz ",
-    "push": "git add . && git cz && git push origin HEAD",
+    "push": "npm run commit && git push origin HEAD",
     "start": "npx webpack-dev-server --mode=development --progress",
     "dev": "npx webpack-dev-server --mode=development --progress",
     "qa": "npx webpack-dev-server --progress --mode=development",
@@ -45,6 +45,7 @@
     "css-loader": "^6.7.1",
     "dayjs": "^1.11.5",
     "lodash": "^4.17.21",
+    "pinia": "^2.0.23",
     "style-loader": "^3.3.1",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5",
