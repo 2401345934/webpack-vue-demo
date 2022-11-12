@@ -24,7 +24,6 @@
   height: @height;
 }
 
-
 //浮动（主要针对PC端了...）
 .float(@side: left) {
   float: @side;
@@ -37,7 +36,7 @@
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
     overflow: hidden;
@@ -56,7 +55,7 @@
 
 //设置透明度
 .opacity(@val) {
-  filter: alpha(opacity=@val);
+  filter: alpha(opacity= @val);
   opacity: @val / 100;
 }
 

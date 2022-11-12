@@ -3,7 +3,7 @@
  * * 自动升级版本号并打标签 *
  * 相当于修改package.json里面version字段值，然后git commit -m 'xxx'，再git tag -a ${version}
  * */
- 
+
 // https://github.com/google/zx
 import 'zx/globals'
 const filename = './package.json'
@@ -25,15 +25,18 @@ const questions = [
       { title: 'no-change: ' + sourcePatch, value: sourcePatch },
       { title: 'patch: ' + nextPatch, value: nextPatch },
       { title: 'minor: ' + nextMinor, value: nextMinor },
-      { title: 'major: ' + nextMajor, value: nextMajor },
-    ],
-  },
+      { title: 'major: ' + nextMajor, value: nextMajor }
+    ]
+  }
 ]
 const response = await prompts(questions)
 const newVersion = response.version
 if (newVersion) {
   const data = await fs.readFile(filename)
-  const content = String(data).replace(`"version": "${version}"`, `"version": "${newVersion}"`)
+  const content = String(data).replace(
+    `"version": "${version}"`,
+    `"version": "${newVersion}"`
+  )
   await fs.writeFile(filename, content)
   console.log(chalk.green('`package.json` updated!'))
 }
