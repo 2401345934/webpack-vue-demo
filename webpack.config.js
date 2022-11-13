@@ -53,19 +53,11 @@ const config = {
     ComponentsPlugin({
       resolvers: [AntDesignVueResolver()]
     }),
+    // htmlWebpackPlugin
     new HtmlWebpackPlugin({
-      templateContent: `
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>alan Vue Webpack App</title>
-  </head>
-  <body>
-    <div id="app" />
-  </body>
-</html>
-    `
+      filename: 'index.html',
+      template: 'index.html',
+      inject: 'head'
     })
     // new CompressionPlugin()
   ]

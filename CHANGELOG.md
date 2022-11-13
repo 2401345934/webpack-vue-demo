@@ -1,4 +1,4 @@
-## <small>1.0.2 (2022-11-12)</small>
+## <small>1.0.3 (2022-11-13)</small>
 
 - ♻️ 重构(typescript): 修改 cz ([72d214e](https://github.com/2401345934/webpack-vue-demo/commit/72d214e))
 - ✨ 新增(config): 拆分 webpack 剥离 config ([b8e0015](https://github.com/2401345934/webpack-vue-demo/commit/b8e0015))
@@ -8,6 +8,7 @@
 - ✨ 新增(package): 修改 build 命令 ([a2c6669](https://github.com/2401345934/webpack-vue-demo/commit/a2c6669))
 - ✨ 新增(package): test change log ([0d5ae0d](https://github.com/2401345934/webpack-vue-demo/commit/0d5ae0d))
 - ✨ 新增(package): test changelog ([c4996bc](https://github.com/2401345934/webpack-vue-demo/commit/c4996bc))
+- ✨ 新增(pages): 新增 store 存储器 ([7ce0bf6](https://github.com/2401345934/webpack-vue-demo/commit/7ce0bf6))
 - ✨ 新增(pages): 增加 layout 布局 ([9b54e29](https://github.com/2401345934/webpack-vue-demo/commit/9b54e29))
 - ✨ 新增(pages): stlye 新增默认样式处理 和 mixins ([d041f9d](https://github.com/2401345934/webpack-vue-demo/commit/d041f9d))
 - ✨ 新增(pages): todolist ([f117398](https://github.com/2401345934/webpack-vue-demo/commit/f117398))
