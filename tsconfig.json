@@ -3,6 +3,7 @@
     "allowJs": true,
     // 目标代码(ts -> js(es5/6/7))
     "target": "esnext",
+    "noImplicitThis": false, // 忽略 this 的类型检查, Raise error on this expressions with an implied any type.
     // 目标代码需要使用的模块化方案(commonjs require/module.exports/es module import/export)
     "module": "esnext",
     // 严格一些严格的检查(any)
@@ -25,13 +26,22 @@
     // 文件路径在解析时, 基本url
     "baseUrl": ".",
     // 指定具体要解析使用的类型
-    "types": ["webpack-env"],
+    "types": [
+      "webpack-env"
+    ],
     // 路径解析(类似于webpack alias)
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     // 可以指定在项目中可以使用哪里库的类型(Proxy/Window/Document)
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   },
   "include": [
     "./src/*.ts",
@@ -45,5 +55,7 @@
     "src/main.js",
     "src/types.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
