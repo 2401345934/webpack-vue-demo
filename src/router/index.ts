@@ -1,6 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const routes = [
+type RouterType = {
+  path: string
+  name: string
+  component: () => Promise<typeof import('*.vue')>
+  children?: RouterType[]
+  meta?: {
+    title: string
+    icon: string
+  }
+}
+const routes: RouterType[] = [
   {
     path: '/',
     name: 'home',

@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import requestInterceptors from './interceptors/request/index'
 import responseInterceptors from './interceptors/response/index'
 import type { RequestType, ResponseData } from './index.type'
 
-const instance = axios.create({
+const instance: AxiosInstance = axios.create({
   baseURL: 'https://some-domain.com/api/',
   timeout: 5000
 })
@@ -15,6 +15,7 @@ instance.interceptors.request.use(
     // 此处注意，不能使用forEach
     // 在forEach里面写的callback函数会直接在while循环里面调用，相当于在for循环中执行了异步函数
     for (const fn of requestInterceptors) {
+      // eslint-disable-next-line no-await-in-loop
       config = await Promise.resolve(fn.call(this, config))
     }
     return config
