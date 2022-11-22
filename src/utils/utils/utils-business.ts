@@ -11,7 +11,20 @@ const getSelectedText = (): string | undefined => {
   return ''
 }
 
+const piniaPlugnsGetStorage = (key: string) => {
+  return JSON.parse(localStorage.getItem(key) || '{}')
+}
+
+const piniaPlugnsSetStorage = (key: string, value: string | any) => {
+  localStorage.setItem(
+    key,
+    typeof value !== 'string' ? JSON.stringify(value) : value
+  )
+}
+
 export default {
   getFirstScreenRenderingTime,
-  getSelectedText
+  getSelectedText,
+  piniaPlugnsGetStorage,
+  piniaPlugnsSetStorage
 }

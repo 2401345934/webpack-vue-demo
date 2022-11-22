@@ -4,7 +4,7 @@
 import '@vue/runtime-core'
 
 export {}
-
+declare module 'lodash'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
@@ -15,6 +15,14 @@ declare module '@vue/runtime-core' {
     ALayoutSider: typeof import('ant-design-vue/es')['LayoutSider']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
+    BaseLayout: typeof import('./src/components/BaseLayout/index.vue')['default']
+    ChilrenComponent: typeof import('./src/components/ChilrenComponent/index.vue')['default']
+    ComponentWarp: typeof import('./src/components/ComponentWarp/index.vue')['default']
+    Content: typeof import('./src/components/Header/components/content.vue')['default']
+    Header: typeof import('./src/components/Header/index.vue')['default']
+    Logo: typeof import('./src/components/Header/components/logo.vue')['default']
+    MultiTab: typeof import('./src/components/MultiTab/index.vue')['default']
+    QueryTable: typeof import('./src/components/BusinessComponent/QueryTable/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
