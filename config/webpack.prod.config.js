@@ -7,10 +7,7 @@ module.exports = {
   // cache: {
   //   type: 'filesystem'
   // },
-  externals: {
-    lodash: '_',
-    dayjs: 'dayjs'
-  },
+  externals: {},
   optimization: {
     splitChunks: {
       chunks: 'async',

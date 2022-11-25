@@ -1,9 +1,7 @@
 <template>
-  <h1>欢迎来到 </h1>
+  <h1>欢迎来到</h1>
 </template>
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <style scoped lang="less">
 h1 {

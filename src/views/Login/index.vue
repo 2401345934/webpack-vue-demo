@@ -1,15 +1,9 @@
-
 <template name="Login">
   <div class="warp">
-    <div class="center_warp">
-      登陆
-    </div>
-
+    <div class="center_warp">登陆</div>
   </div>
 </template>
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 <style scoped lang="less">
 .warp {
   width: 100vw;

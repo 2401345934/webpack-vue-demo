@@ -1,55 +1,57 @@
 <template name="Home">
   <div class="warp">
-    <div v-show="!$state.fullscreenFlag"
-         class="header">
+    <div v-show="!$state.fullscreenFlag" class="header">
       <Header></Header>
     </div>
-    <div v-show="!$state.fullscreenFlag"
-         class="slide"
-         :class="menuStore.$state.collapsed && 'slide_w'">
-      <a-menu :inline-collapsed="menuStore.$state.collapsed"
-              mode="inline"
-              :selected-keys="selectedKeys"
-              :open-keys="openKey"
-              @click="changeMenuKey">
-        <template v-for="item in route"
-                  :key="item.path">
-          <a-sub-menu v-if="item.children"
-                      :key="item.path">
+    <div
+      v-show="!$state.fullscreenFlag"
+      class="slide"
+      :class="menuStore.$state.collapsed && 'slide_w'"
+    >
+      <a-menu
+        :inline-collapsed="menuStore.$state.collapsed"
+        mode="inline"
+        :selected-keys="selectedKeys"
+        :open-keys="openKey"
+        @click="changeMenuKey"
+      >
+        <template v-for="item in route" :key="item.path">
+          <a-sub-menu v-if="item.children" :key="item.path">
             <template #title>
               <span>{{ item.meta.title }}</span>
             </template>
-            <template v-for="childrenRouter in item.children"
-                      :key="childrenRouter.path">
-              <a-menu-item :title="childrenRouter.meta.title"
-                           :index="childrenRouter.path">
+            <template
+              v-for="childrenRouter in item.children"
+              :key="childrenRouter.path"
+            >
+              <a-menu-item
+                :title="childrenRouter.meta.title"
+                :index="childrenRouter.path"
+              >
                 <span>{{ childrenRouter.meta.title }}</span>
               </a-menu-item>
             </template>
           </a-sub-menu>
-          <a-menu-item v-else
-                       :key="(item.path)"
-                       :title="item.meta.title">
+          <a-menu-item v-else :key="item.path" :title="item.meta.title">
             <span>{{ item.meta.title }}</span>
           </a-menu-item>
         </template>
       </a-menu>
     </div>
     <keep-alive>
-      <div class="content_warp"
-           :class="$state.fullscreenFlag ? 'full_evaluation' : 'content_warp'">
+      <div
+        class="content_warp"
+        :class="$state.fullscreenFlag ? 'full_evaluation' : 'content_warp'"
+      >
         <MultiTabComponent></MultiTabComponent>
         <div class="content">
           <ComponentWarp :detail-title="detailTitle">
             <template #main>
               <router-view v-slot="{ Component, route }">
                 <keep-alive v-if="route.meta.keepAlive">
-                  <component :is="Component"
-                             :key="route.path" />
+                  <component :is="Component" :key="route.path" />
                 </keep-alive>
-                <component :is="Component"
-                           v-else
-                           :key="route.path" />
+                <component :is="Component" v-else :key="route.path" />
               </router-view>
             </template>
           </ComponentWarp>
@@ -67,8 +69,8 @@ import { theme } from '@/store/module/theme'
 import { menu } from '@/store/module/menu'
 import { MenuInfo } from 'ant-design-vue/es/menu/src/interface'
 import { multiTab } from '@/store/module/multiTab'
-import { onMounted, ref, watch } from "vue"
-import { useRouter } from "vue-router"
+import { onMounted, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 
 const multiTabStore = multiTab()
 const { $state } = multiTabStore
@@ -102,14 +104,18 @@ onMounted(() => {
 const togglefullscreenFlag = (fullscreenFlag: boolean) => {
   // true 是全屏幕
   // false  取消全凭
-  const isFullScreen: any = document.fullscreen || (document as any).webkitIsFullScreen || (document as any).mozFullScreen
+  const isFullScreen: any =
+    document.fullscreen ||
+    (document as any).webkitIsFullScreen ||
+    (document as any).mozFullScreen
   const contentEle: any = document.querySelector('.content_warp')
   // 全屏幕
   if (contentEle && !isFullScreen && fullscreenFlag) {
-    let fullScreenEle: any = contentEle.requestFullscreen
-      || contentEle.mozRequestFullScreen
-      || contentEle.webkitRequestFullScreen
-      || contentEle.msRequestFullscreen
+    let fullScreenEle: any =
+      contentEle.requestFullscreen ||
+      contentEle.mozRequestFullScreen ||
+      contentEle.webkitRequestFullScreen ||
+      contentEle.msRequestFullscreen
     if (fullScreenEle) {
       // 是否全屏
       // fullScreenEle.call(contentEle);
@@ -118,10 +124,11 @@ const togglefullscreenFlag = (fullscreenFlag: boolean) => {
   }
   // 取消全凭
   if (document && isFullScreen && !fullscreenFlag) {
-    let exitFullScreen: any = document.exitFullscreen
-      || (document as any).mozCancelFullScreen
-      || (document as any).webkitCancelFullScreen
-      || (document as any).msExitFullscreen
+    let exitFullScreen: any =
+      document.exitFullscreen ||
+      (document as any).mozCancelFullScreen ||
+      (document as any).webkitCancelFullScreen ||
+      (document as any).msExitFullscreen
     if (exitFullScreen) {
       // 是否取消 全屏
       // exitFullScreen.call(document);
@@ -129,16 +136,22 @@ const togglefullscreenFlag = (fullscreenFlag: boolean) => {
   }
 }
 
-watch(() => $state.fullscreenFlag, (v: boolean) => {
-  togglefullscreenFlag(v)
-})
+watch(
+  () => $state.fullscreenFlag,
+  (v: boolean) => {
+    togglefullscreenFlag(v)
+  }
+)
 
-watch(() => routers.currentRoute.value.fullPath, () => {
-  const keysArr = routers.currentRoute.value.matched.map(d => d.path)
-  keysArr.splice(0, 1)
-  selectedKeys.value = keysArr
-  openKey.value = keysArr
-})
+watch(
+  () => routers.currentRoute.value.fullPath,
+  () => {
+    const keysArr = routers.currentRoute.value.matched.map(d => d.path)
+    keysArr.splice(0, 1)
+    selectedKeys.value = keysArr
+    openKey.value = keysArr
+  }
+)
 
 // 递归打平
 const deepRouter = (routers: RouterType[]) => {
@@ -153,7 +166,9 @@ const deepRouter = (routers: RouterType[]) => {
   }
 }
 
-const detailTitle: any = () => routerFlat.value.find((item: any) => item.path === pathname.value)?.meta?.title
+const detailTitle: any = () =>
+  routerFlat.value.find((item: any) => item.path === pathname.value)?.meta
+    ?.title
 
 routers.afterEach((to: any) => {
   if (pathname.value === to.fullPath) return

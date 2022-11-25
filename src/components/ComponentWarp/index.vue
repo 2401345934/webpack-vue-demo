@@ -1,4 +1,3 @@
-
 <template name="contentWarp">
   <div class="contentWarp">
     <div class="main">
@@ -7,7 +6,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-defineProps(["detailTitle"]);
+defineProps(['detailTitle'])
 </script>
 <style scoped lang="less">
 .contentWarp {
