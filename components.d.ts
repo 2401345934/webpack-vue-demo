@@ -4,17 +4,23 @@
 import '@vue/runtime-core'
 
 export {}
-declare module 'lodash'
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AAvatar: typeof import('ant-design-vue/es')['Avatar']
+    ABreadcrumb: typeof import('ant-design-vue/es')['Breadcrumb']
     AButton: typeof import('ant-design-vue/es')['Button']
-    AInput: typeof import('ant-design-vue/es')['Input']
-    ALayout: typeof import('ant-design-vue/es')['Layout']
-    ALayoutContent: typeof import('ant-design-vue/es')['LayoutContent']
-    ALayoutHeader: typeof import('ant-design-vue/es')['LayoutHeader']
-    ALayoutSider: typeof import('ant-design-vue/es')['LayoutSider']
+    ACol: typeof import('ant-design-vue/es')['Col']
+    ADrawer: typeof import('ant-design-vue/es')['Drawer']
+    ADropdown: typeof import('ant-design-vue/es')['Dropdown']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
+    AResult: typeof import('ant-design-vue/es')['Result']
+    ARow: typeof import('ant-design-vue/es')['Row']
+    ASpace: typeof import('ant-design-vue/es')['Space']
+    ASubMenu: typeof import('ant-design-vue/es')['SubMenu']
+    ATabPane: typeof import('ant-design-vue/es')['TabPane']
+    ATabs: typeof import('ant-design-vue/es')['Tabs']
     BaseLayout: typeof import('./src/components/BaseLayout/index.vue')['default']
     ChilrenComponent: typeof import('./src/components/ChilrenComponent/index.vue')['default']
     ComponentWarp: typeof import('./src/components/ComponentWarp/index.vue')['default']
@@ -22,7 +28,6 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./src/components/Header/index.vue')['default']
     Logo: typeof import('./src/components/Header/components/logo.vue')['default']
     MultiTab: typeof import('./src/components/MultiTab/index.vue')['default']
-    QueryTable: typeof import('./src/components/BusinessComponent/QueryTable/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

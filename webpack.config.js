@@ -15,8 +15,8 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // 性能分析
 const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default
-const { AntDesignVueResolver } = require('unplugin-vue-components/resolvers')
-const ComponentsPlugin = require('unplugin-vue-components/webpack')
+// const { AntDesignVueResolver } = require('unplugin-vue-components/resolvers')
+// const ComponentsPlugin = require('unplugin-vue-components/webpack')
 // 压缩
 // const CompressionPlugin = require('compression-webpack-plugin')
 // build 前 清理 dist
@@ -50,9 +50,9 @@ const config = {
     new MiniCssExtractPlugin(),
     new StatoscopeWebpackPlugin(),
     new VueLoaderPlugin(),
-    ComponentsPlugin({
-      resolvers: [AntDesignVueResolver()]
-    }),
+    // ComponentsPlugin({
+    //   resolvers: [AntDesignVueResolver()]
+    // }),
     // htmlWebpackPlugin
     new HtmlWebpackPlugin({
       filename: 'index.html',

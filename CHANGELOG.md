@@ -1,9 +1,10 @@
-## <small>1.0.6 (2022-11-22)</small>
+## 1.1.0 (2022-11-25)
 
 - ♻️ 重构(typescript): 修改 cz ([72d214e](https://github.com/2401345934/webpack-vue-demo/commit/72d214e))
 - ✨ 新增(config): 拆分 webpack 剥离 config ([b8e0015](https://github.com/2401345934/webpack-vue-demo/commit/b8e0015))
 - ✨ 新增(custom): 完善目录类型 ([d42a4af](https://github.com/2401345934/webpack-vue-demo/commit/d42a4af))
 - ✨ 新增(custom): 新增 request 请求封装 \&\& utils 封装 ([3baa5c0](https://github.com/2401345934/webpack-vue-demo/commit/3baa5c0))
+- ✨ 新增(custom): 新增 ts 配置 防止 @引入报错 新增 components ([cb8f487](https://github.com/2401345934/webpack-vue-demo/commit/cb8f487))
 - ✨ 新增(custom): 新增状态管理器 ([a7878fa](https://github.com/2401345934/webpack-vue-demo/commit/a7878fa))
 - ✨ 新增(hook): 新增 hooks 文件分类 ([a8d9f03](https://github.com/2401345934/webpack-vue-demo/commit/a8d9f03))
 - ✨ 新增(package): 修改 package ([4ed097f](https://github.com/2401345934/webpack-vue-demo/commit/4ed097f))

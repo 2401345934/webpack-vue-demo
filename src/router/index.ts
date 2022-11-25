@@ -1,36 +1,69 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-type RouterType = {
+export type RouterType = {
   path: string
   name: string
   component: () => Promise<typeof import('*.vue')>
-  children?: RouterType[]
+  redirect?: any
   meta?: {
     title: string
-    icon: string
+    keepAlive?: boolean
   }
+  children?: RouterType[]
 }
+
+// createWebHistory   history 模式 不带有# 号  刷新时需要后端配合   在某个页面刷新 会以当前url  前往后端请求 需要nginx 做相应的配置 才不会出现 刷新404
 const routes: RouterType[] = [
   {
     path: '/',
-    name: 'home',
-    component: () => import('@/pages/Home/index.vue'),
+    component: () => import('@/components/BaseLayout/index.vue'),
+    name: 'layout',
+    redirect: '/welcome',
     children: [
       {
-        path: '/todo',
-        name: 'Todo',
-        component: () => import('@/pages/Todo/index.vue'),
-        meta: { title: 'Todo List', icon: 'icon-gongzuotai' }
+        path: '/welcome',
+        name: 'Welcome',
+        component: () => import('@/views/Welcome/index.vue'),
+        meta: {
+          title: '首页',
+          keepAlive: true
+        }
+      },
+      {
+        path: '/welcome2',
+        name: 'Welcome2',
+        component: () => import('@/views/Welcome2/index.vue'),
+        meta: {
+          title: '测试2',
+          keepAlive: true
+        }
+      },
+      {
+        path: '/welcome3',
+        name: 'Welcome3',
+        component: () => import('@/views/Welcome3/index.vue'),
+        meta: {
+          title: '测试3',
+          keepAlive: true
+        }
       }
     ]
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/views/404/index.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/Login/index.vue')
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
 
-const routerList = routes[0].children
-
-export { router, routerList }
+export default router

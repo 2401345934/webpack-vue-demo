@@ -1,10 +1,11 @@
 {
   "name": "webpack-vue",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "version": "# 修改 version  \n zx bump.mjs",
+    "create": "node template/index.ts",
     "commit": "npm run version && npm run changelog && git add . && git cz ",
     "push": "npm run commit && git push origin HEAD",
     "start": "npx webpack-dev-server --mode=development --progress",
