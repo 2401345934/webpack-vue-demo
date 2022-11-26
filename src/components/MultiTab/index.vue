@@ -1,26 +1,31 @@
 <template>
-  <div class="multi_tab"
-       :class="[
-         $state.fullscreenFlag ? 'full_evaluation' : 'multi_tab',
-         menuStore.$state.collapsed && 'multi_tab_w'
-       ]">
+  <div
+    class="multi_tab"
+    :class="[
+      $state.fullscreenFlag ? 'full_evaluation' : 'multi_tab',
+      menuStore.$state.collapsed && 'multi_tab_w'
+    ]"
+  >
     <keep-alive>
-      <a-tabs hide-add
-              @change="routerChange"
-              type="editable-card"
-              @edit="onEdit"
-              :activeKey="$state.activeKey">
-        <a-tab-pane v-for="route in $state.routerList"
-                    :key="route.path"
-                    :closable="$state.routerList.length > 1"
-                    :tab="`${route.name}`">
+      <a-tabs
+        hide-add
+        @change="routerChange"
+        type="editable-card"
+        @edit="onEdit"
+        :activeKey="$state.activeKey"
+      >
+        <a-tab-pane
+          v-for="route in $state.routerList"
+          :key="route.path"
+          :closable="$state.routerList.length > 1"
+          :tab="`${route.name}`"
+        >
         </a-tab-pane>
         <template #rightExtra>
           <div class="multi_tab_r">
             <a-space>
               <a-dropdown>
-                <a class="ant-dropdown-link"
-                   @click.prevent>
+                <a class="ant-dropdown-link" @click.prevent>
                   <FormOutlined />
                 </a>
                 <template #overlay>
@@ -40,8 +45,7 @@
                   </a-menu>
                 </template>
               </a-dropdown>
-              <a class="ant-dropdown-link"
-                 @click.prevent="fullscreenChange">
+              <a class="ant-dropdown-link" @click.prevent="fullscreenChange">
                 <fullscreen-outlined v-show="!$state.fullscreenFlag" />
                 <fullscreen-exit-outlined v-show="$state.fullscreenFlag" />
               </a>
@@ -63,7 +67,7 @@ import {
 import { menu } from '@/store/module/menu'
 import { MenuInfo } from 'ant-design-vue/es/menu/src/interface'
 import router, { RouterType } from '@/router'
-import { ref, onMounted, watch, onUnmounted } from 'vue';
+import { ref, onMounted, watch, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 const menuStore = menu()
 const route: any = router.options.routes[0].children
