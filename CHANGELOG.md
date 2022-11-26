@@ -1,5 +1,6 @@
-## <small>1.1.2 (2022-11-26)</small>
+## <small>1.1.3 (2022-11-26)</small>
 
+- @/utils/utils ([a783caa](https://github.com/2401345934/webpack-vue-demo/commit/a783caa))
 - ♻️ 重构(typescript): 修改 cz ([72d214e](https://github.com/2401345934/webpack-vue-demo/commit/72d214e))
 - ✨ 新增(config): 拆分 webpack 剥离 config ([b8e0015](https://github.com/2401345934/webpack-vue-demo/commit/b8e0015))
 - ✨ 新增(custom): 完善目录类型 ([d42a4af](https://github.com/2401345934/webpack-vue-demo/commit/d42a4af))
@@ -20,6 +21,7 @@
 - ✨ 新增(request): ([2eeb970](https://github.com/2401345934/webpack-vue-demo/commit/2eeb970))
 - ✨ 新增(request): axios 封装 ([170d403](https://github.com/2401345934/webpack-vue-demo/commit/170d403))
 - ✨ 新增(router): 改用 history 路由 并修改 webpack 配置 ([0551a6b](https://github.com/2401345934/webpack-vue-demo/commit/0551a6b))
+- ✨ 新增(router): 修改 router ([09c6853](https://github.com/2401345934/webpack-vue-demo/commit/09c6853))
 - ✨ 新增(router): 引入 vue-router ([c3ec5b6](https://github.com/2401345934/webpack-vue-demo/commit/c3ec5b6))
 - ✨ 新增(tsconfig): 增加 paths ([e719b94](https://github.com/2401345934/webpack-vue-demo/commit/e719b94))
 - ✨ 新增(utils): 新增 utils 工具 ([0f556b2](https://github.com/2401345934/webpack-vue-demo/commit/0f556b2))

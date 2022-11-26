@@ -1,57 +1,53 @@
 <template name="Home">
   <div class="warp">
-    <div v-show="!$state.fullscreenFlag" class="header">
+    <div v-show="!$state.fullscreenFlag"
+         class="header">
       <Header></Header>
     </div>
-    <div
-      v-show="!$state.fullscreenFlag"
-      class="slide"
-      :class="menuStore.$state.collapsed && 'slide_w'"
-    >
-      <a-menu
-        :inline-collapsed="menuStore.$state.collapsed"
-        mode="inline"
-        :selected-keys="selectedKeys"
-        :open-keys="openKey"
-        @click="changeMenuKey"
-      >
-        <template v-for="item in route" :key="item.path">
-          <a-sub-menu v-if="item.children" :key="item.path">
+    <div v-show="!$state.fullscreenFlag"
+         class="slide"
+         :class="menuStore.$state.collapsed && 'slide_w'">
+      <a-menu :inline-collapsed="menuStore.$state.collapsed"
+              mode="inline"
+              :selected-keys="selectedKeys"
+              :open-keys="openKey"
+              @click="changeMenuKey">
+        <template v-for="item in route"
+                  :key="item.path">
+          <a-sub-menu v-if="item.children">
             <template #title>
               <span>{{ item.meta.title }}</span>
             </template>
-            <template
-              v-for="childrenRouter in item.children"
-              :key="childrenRouter.path"
-            >
-              <a-menu-item
-                :title="childrenRouter.meta.title"
-                :index="childrenRouter.path"
-              >
+            <template v-for="childrenRouter in item.children"
+                      :key="childrenRouter.path">
+              <a-menu-item :title="childrenRouter.meta.title"
+                           :index="childrenRouter.path">
                 <span>{{ childrenRouter.meta.title }}</span>
               </a-menu-item>
             </template>
           </a-sub-menu>
-          <a-menu-item v-else :key="item.path" :title="item.meta.title">
+          <a-menu-item v-else
+                       :title="item.meta.title">
             <span>{{ item.meta.title }}</span>
           </a-menu-item>
         </template>
       </a-menu>
     </div>
     <keep-alive>
-      <div
-        class="content_warp"
-        :class="$state.fullscreenFlag ? 'full_evaluation' : 'content_warp'"
-      >
+      <div class="content_warp"
+           :class="$state.fullscreenFlag ? 'full_evaluation' : 'content_warp'">
         <MultiTabComponent></MultiTabComponent>
         <div class="content">
           <ComponentWarp :detail-title="detailTitle">
             <template #main>
               <router-view v-slot="{ Component, route }">
                 <keep-alive v-if="route.meta.keepAlive">
-                  <component :is="Component" :key="route.path" />
+                  <component :is="Component"
+                             :key="route.path" />
                 </keep-alive>
-                <component :is="Component" v-else :key="route.path" />
+                <component :is="Component"
+                           v-else
+                           :key="route.path" />
               </router-view>
             </template>
           </ComponentWarp>
