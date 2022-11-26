@@ -7,7 +7,9 @@
 </template>
 <script>
 export default {
-  name: 'Yewu'
+  name: ''
 }
 </script>
-<style scoped lang="less"></style>
+<style scoped lang="less">
+
+</style>

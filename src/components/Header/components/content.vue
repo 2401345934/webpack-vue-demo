@@ -1,7 +1,9 @@
 <template>
   <div class="menuChange">
-    <MenuUnfoldOutlined @click="toggleCollapsed" v-if="state.collapsed" />
-    <MenuFoldOutlined @click="toggleCollapsed" v-else />
+    <MenuUnfoldOutlined @click="toggleCollapsed"
+                        v-if="state.collapsed" />
+    <MenuFoldOutlined @click="toggleCollapsed"
+                      v-else />
   </div>
   <div class="breadcrumb">
     <a-breadcrumb :routes="routersList">
@@ -10,9 +12,10 @@
       </template>
       <template #itemRender="{ route, paths }">
         <span v-if="routes.indexOf(route) === routes.length - 1">{{
-          route.meta.title
+            route.meta.title
         }}</span>
-        <a v-else @click="toRouter(route, paths)">{{ route.meta.title }}</a>
+        <a v-else
+           @click="toRouter(route, paths)">{{ route.meta.title }}</a>
       </template>
     </a-breadcrumb>
   </div>
@@ -23,21 +26,25 @@ import { menu } from '@/store/module/menu'
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue'
 import router from '@/router/index'
 import { useRouter } from 'vue-router'
-import { reactive, ref, watch } from 'vue'
+import { reactive, ref, watch, onUnmounted } from 'vue';
 const routes: any = router.options.routes[0].children
 const routers = useRouter()
 const routersList = ref(
   routers.currentRoute.value.matched.filter(d => d.path !== '/')
 )
 
-watch(
+const unWatchPath = watch(
   () => routers.currentRoute.value.fullPath,
-  v => {
+  () => {
     routersList.value = routers.currentRoute.value.matched.filter(
       d => d.path !== '/'
     )
   }
 )
+
+onUnmounted(() => {
+  unWatchPath()
+})
 const toRouter = (route: any, paths: string[]) => {
   if (route.children) {
     return
