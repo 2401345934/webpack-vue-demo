@@ -1,4 +1,4 @@
-## <small>1.1.3 (2022-11-26)</small>
+## <small>1.1.4 (2022-12-04)</small>
 
 - @/utils/utils ([a783caa](https://github.com/2401345934/webpack-vue-demo/commit/a783caa))
 - ♻️ 重构(typescript): 修改 cz ([72d214e](https://github.com/2401345934/webpack-vue-demo/commit/72d214e))
@@ -11,6 +11,7 @@
 - ✨ 新增(hook): 新增 hooks 文件分类 ([a8d9f03](https://github.com/2401345934/webpack-vue-demo/commit/a8d9f03))
 - ✨ 新增(package): 新增 readme 和 package json ([7c0ac13](https://github.com/2401345934/webpack-vue-demo/commit/7c0ac13))
 - ✨ 新增(package): 修改 package ([4ed097f](https://github.com/2401345934/webpack-vue-demo/commit/4ed097f))
+- ✨ 新增(package): 修改多余的 key ([92f12a9](https://github.com/2401345934/webpack-vue-demo/commit/92f12a9))
 - ✨ 新增(package): 修改 build 命令 ([a2c6669](https://github.com/2401345934/webpack-vue-demo/commit/a2c6669))
 - ✨ 新增(package): test change log ([0d5ae0d](https://github.com/2401345934/webpack-vue-demo/commit/0d5ae0d))
 - ✨ 新增(package): test changelog ([c4996bc](https://github.com/2401345934/webpack-vue-demo/commit/c4996bc))
