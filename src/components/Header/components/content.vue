@@ -38,7 +38,6 @@ const unWatchPath = watch(
     )
   }
 )
-
 onUnmounted(() => {
   unWatchPath()
 })
