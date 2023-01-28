@@ -1,4 +1,6 @@
-## <small>1.1.5 (2022-12-31)</small>
+## <small>1.1.6 (2023-01-28)</small>
+
+- ✨ 新增(hook): 新增 hooks defer ([b64cd75](https://github.com/2401345934/webpack-vue-demo/commit/b64cd75))
 
 ## 1.0.0 (2022-12-04)
 

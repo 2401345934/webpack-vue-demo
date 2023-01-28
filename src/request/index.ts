@@ -1,4 +1,8 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, {
+  AxiosInstance,
+  InternalAxiosRequestConfig,
+  AxiosResponse
+} from 'axios'
 import requestInterceptors from './interceptors/request/index'
 import responseInterceptors from './interceptors/response/index'
 import type { RequestType, ResponseData } from './index.type'
@@ -10,7 +14,7 @@ const instance: AxiosInstance = axios.create({
 
 // 添加请求拦截器
 instance.interceptors.request.use(
-  async function (config: AxiosRequestConfig) {
+  async function (config: InternalAxiosRequestConfig) {
     // 在发送请求之前做些什么
     // 此处注意，不能使用forEach
     // 在forEach里面写的callback函数会直接在while循环里面调用，相当于在for循环中执行了异步函数
