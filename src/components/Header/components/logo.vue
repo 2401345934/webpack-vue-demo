@@ -1,5 +1,5 @@
 <template>
-  <div class="logo"></div>
+  <div class="logo">XMH</div>
 </template>
 
 <script setup lang="ts"></script>
@@ -7,5 +7,9 @@
 .logo {
   height: 60px;
   width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

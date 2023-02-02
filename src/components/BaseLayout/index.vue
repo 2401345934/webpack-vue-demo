@@ -13,28 +13,32 @@
         mode="inline"
         :selected-keys="selectedKeys"
         :open-keys="openKey"
-        @click="changeMenuKey"
+        @select="changeMenuKey"
       >
         <template v-for="item in route" :key="item.path">
-          <a-sub-menu v-if="item.children">
-            <template #title>
-              <span>{{ item.meta.title }}</span>
-            </template>
-            <template
-              v-for="childrenRouter in item.children"
-              :key="childrenRouter.path"
-            >
-              <a-menu-item
-                :title="childrenRouter.meta.title"
-                :index="childrenRouter.path"
+          <template v-if="item.children">
+            <a-sub-menu :key="item.path">
+              <template #title>
+                <span>{{ item.meta.title }}</span>
+              </template>
+              <template
+                v-for="childrenRouter in item.children"
+                :key="childrenRouter.path"
               >
-                <span>{{ childrenRouter.meta.title }}</span>
-              </a-menu-item>
-            </template>
-          </a-sub-menu>
-          <a-menu-item v-else :title="item.meta.title">
-            <span>{{ item.meta.title }}</span>
-          </a-menu-item>
+                <a-menu-item
+                  :title="childrenRouter.meta.title"
+                  :index="childrenRouter.path"
+                >
+                  <span>{{ childrenRouter.meta.title }}</span>
+                </a-menu-item>
+              </template>
+            </a-sub-menu>
+          </template>
+          <template v-else>
+            <a-menu-item :title="item.meta.title" :key="item.path">
+              <span>{{ item.meta.title }}</span>
+            </a-menu-item>
+          </template>
         </template>
       </a-menu>
     </div>
@@ -83,6 +87,7 @@ const openKey = ref<string[]>([])
 const routerFlat = ref<RouterType[]>([])
 const changeMenuKey = (i: MenuInfo) => {
   selectedKeys.value = i.keyPath as string[]
+  console.log('first', selectedKeys.value, i)
   if (i.key) {
     router.push(i.key as any)
   } else {

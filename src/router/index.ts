@@ -23,47 +23,9 @@ const routes: RouterType[] = [
       {
         path: '/welcome',
         name: 'Welcome',
-        component: () => import('@/components/ChilrenComponent/index.vue'),
+        component: () => import('@/views/Welcome/index.vue'),
         meta: {
           title: '首页',
-          keepAlive: true
-        }
-      },
-      {
-        path: '/welcome2',
-        name: 'Welcome2',
-        component: () => import('@/views/Welcome2/index.vue'),
-        meta: {
-          title: '测试2',
-          keepAlive: true
-        },
-        children: [
-          {
-            path: '/welcome/test2',
-            name: 'test2',
-            component: () => import('@/views/Welcome2/index.vue'),
-            meta: {
-              title: '测试2',
-              keepAlive: true
-            }
-          },
-          {
-            path: '/welcome33/test3',
-            name: 'test3',
-            component: () => import('@/views/Welcome3/index.vue'),
-            meta: {
-              title: '测试3',
-              keepAlive: true
-            }
-          }
-        ]
-      },
-      {
-        path: '/welcome3',
-        name: 'Welcome3',
-        component: () => import('@/views/Welcome3/index.vue'),
-        meta: {
-          title: '测试3',
           keepAlive: true
         }
       }
