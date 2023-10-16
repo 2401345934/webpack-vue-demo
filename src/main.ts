@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './index.vue'
-import 'ant-design-vue/dist/antd.variable.min.css'
+import 'ant-design-vue/dist/reset.css'
 import Antd from 'ant-design-vue'
 
 import store from '@/store/index'
