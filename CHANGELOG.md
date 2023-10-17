@@ -1,9 +1,10 @@
-## 2.0.0 (2023-10-16)
+## <small>2.0.1 (2023-10-17)</small>
 
 - ✨新增(hook): 新增 hooks defer ([b64cd75](https://github.com/2401345934/webpack-vue-demo/commit/b64cd75))
 - ✨新增(package): 更新最新依赖 ([3ad9361](https://github.com/2401345934/webpack-vue-demo/commit/3ad9361))
 - 🐛修复(components): 修复 menu 最新特性 ([019a9b6](https://github.com/2401345934/webpack-vue-demo/commit/019a9b6))
 - 🐛修复(request): 修复 interceptores 类型 ([474401b](https://github.com/2401345934/webpack-vue-demo/commit/474401b))
+- 🔧工具(package): 工具升级 ([773db70](https://github.com/2401345934/webpack-vue-demo/commit/773db70))
 
 ## 1.0.0 (2022-12-04)
 

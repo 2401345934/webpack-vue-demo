@@ -18,14 +18,14 @@
   <h1>欢迎来到123</h1>
 </template>
 <script lang="ts" setup>
-import { shallowReadonly } from 'vue';
+import { shallowReadonly } from 'vue'
 
-let obj=  shallowReadonly({
-  name:"张三",
+let obj = shallowReadonly({
+  name: '张三',
   age: 18,
   link: {
     game: {
-      type: "1"
+      type: '1'
     }
   }
 })
