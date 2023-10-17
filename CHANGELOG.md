@@ -6,6 +6,7 @@
 - 🐛修复(request): 修复 interceptores 类型 ([474401b](https://github.com/2401345934/webpack-vue-demo/commit/474401b))
 - 🔧工具(custom): gengixnwebpack yaml ([b46107b](https://github.com/2401345934/webpack-vue-demo/commit/b46107b))
 - 🔧工具(package): 工具升级 ([773db70](https://github.com/2401345934/webpack-vue-demo/commit/773db70))
+- 🔧工具(webpack): webpack yaml ([1d9d781](https://github.com/2401345934/webpack-vue-demo/commit/1d9d781))
 - 🔧工具(webpack): webpack yaml ([24b5c99](https://github.com/2401345934/webpack-vue-demo/commit/24b5c99))
 
 ## 1.0.0 (2022-12-04)
