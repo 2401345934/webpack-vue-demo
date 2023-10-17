@@ -1,5 +1,6 @@
 ## <small>2.0.1 (2023-10-17)</small>
 
+- ✨新增(custom): webpack yaml ([2bd4457](https://github.com/2401345934/webpack-vue-demo/commit/2bd4457))
 - ✨新增(hook): 新增 hooks defer ([b64cd75](https://github.com/2401345934/webpack-vue-demo/commit/b64cd75))
 - ✨新增(package): 更新最新依赖 ([3ad9361](https://github.com/2401345934/webpack-vue-demo/commit/3ad9361))
 - 🐛修复(components): 修复 menu 最新特性 ([019a9b6](https://github.com/2401345934/webpack-vue-demo/commit/019a9b6))
